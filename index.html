@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Membaca pustaka AR dan 3D -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+  </head>
+  <body style="margin: 0px; overflow: hidden;">
+    <a-scene embedded arjs>
+      <!-- Memuat naik model 3D anda ke dalam sistem -->
+      <a-assets>
+        <a-asset-item id="model-saya" src="nama_fail_model_anda.glb"></a-asset-item>
+      </a-assets>
+
+      <!-- Mengesan Marker 'Hiro' (Sila cetak marker ini untuk imbasan) -->
+      <a-marker preset="hiro">
+        <!-- Memaparkan model 3D anda di atas marker -->
+        <a-entity gltf-model="#model-saya" scale="0.5 0.5 0.5" position="0 0 0"></a-entity>
+      </a-marker>
+      
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
